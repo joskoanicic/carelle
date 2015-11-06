@@ -1039,6 +1039,7 @@ class VariableBinding:
  
     @property
     def evaluationResults(self):
+        includeFallback = True
         if self.isFactVar:
             if self.isBindAsSequence and self.facts:
                 for factsPartition in factsPartitions(self.xpCtx, self.facts, self.aspectsDefined - self.aspectsCovered):
@@ -1047,6 +1048,7 @@ class VariableBinding:
                         self.yieldedFactContext = self.yieldedFact.context
                         self.yieldedEvaluation = matchesSubPartition
                         self.isFallback = False
+                        includeFallback = False
                         yield matchesSubPartition
             else:
                 for fact in self.facts:
@@ -1054,13 +1056,15 @@ class VariableBinding:
                     self.yieldedFactContext = self.yieldedFact.context
                     self.yieldedEvaluation = fact
                     self.isFallback = False
+                    includeFallback = False
                     yield fact
             if self.values:
-                self.yieldedFact = None
-                self.yieldedFactContext = None
-                self.yieldedEvaluation = "fallback"
-                self.isFallback = True
-                yield self.values
+                if includeFallback:
+                    self.yieldedFact = None
+                    self.yieldedFactContext = None
+                    self.yieldedEvaluation = "fallback"
+                    self.isFallback = True
+                    yield self.values
         elif self.isGeneralVar:
             self.yieldedFact = None
             self.yieldedFactContext = None
