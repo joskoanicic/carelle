@@ -294,10 +294,10 @@ elif sys.platform == 'win32':
     cx_FreezeExecutables = [
         Executable(
                 script="arelleGUI.pyw",
-                base="Win32GUI",
+                base="Win32GUI", targetName="cArelleGUI.exe"
                 ),
         Executable(
-                script="arelleCmdLine.py",
+                script="arelleCmdLine.py", targetName="cArelleCmdLine.exe"
                 )                            
         ]
 else:  

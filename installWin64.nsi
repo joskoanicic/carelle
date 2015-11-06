@@ -12,17 +12,17 @@
 ;General
 
   ;Name and file
-  Name "Arelle"
+  Name "cArelle"
 
   ; required in order to automatically remove short cuts
   RequestExecutionLevel user
 
   Icon arelle\images\arelle.ico
   UninstallIcon arelle\images\arelle.ico
-  OutFile "dist\arelle-win-x64.exe"
+  OutFile "dist\cArelle-win-x64.exe"
 
   ;Default installation folder
-  InstallDir "$PROGRAMFILES64\Arelle"
+  InstallDir "$PROGRAMFILES64\cArelle"
   
   ;Get installation folder from registry if available
   InstallDirRegKey HKLM "Software\Arelle" ""
@@ -67,7 +67,7 @@
 ;--------------------------------
 ;Installer Sections
 
-Section "Arelle" SecArelle
+Section "cArelle" SecArelle
 
   SetOutPath "$INSTDIR"
   
@@ -93,11 +93,11 @@ Section "Arelle" SecArelle
     
     ;Create shortcuts
     CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
-    CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Arelle.lnk" "$INSTDIR\arelleGUI.exe"
+    CreateShortCut "$SMPROGRAMS\$StartMenuFolder\cArelle.lnk" "$INSTDIR\cArelleGUI.exe"
 
     ; check if webserver installed (known to be there if QuickBooks.qwc is in the build)
     IfFileExists "$INSTDIR\QuickBooks.qwc" 0 +2
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Start Web Server.lnk" "$INSTDIR\arelleCmdLine.exe" "--webserver localhost:8080"
+        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Start Web Server.lnk" "$INSTDIR\cArelleCmdLine.exe" "--webserver localhost:8080"
 
     CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Uninstall.lnk" "$INSTDIR\Uninstall.exe"
   

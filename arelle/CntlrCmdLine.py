@@ -58,7 +58,7 @@ def parseAndRun(args):
     usage = "usage: %prog [options]"
     
     parser = OptionParser(usage, 
-                          version="Arelle(r) {0}bit {1}".format(cntlr.systemWordSize, Version.version),
+                          version="cArelle {0}bit {1} - based on Arelle(r) - commit 4a29f60".format(cntlr.systemWordSize, Version.version),
                           conflict_handler="resolve") # allow reloading plug-in options without errors
     parser.add_option("-f", "--file", dest="entrypointFile",
                       help=_("FILENAME is an entry point, which may be "
@@ -356,7 +356,15 @@ def parseAndRun(args):
         
     (options, leftoverArgs) = parser.parse_args(args)
     if options.about:
-        print(_("\narelle(r) {0}bit {1}\n\n"
+        print(_("\ncArelle {0}bit {1} - based on Arelle(r) - commit 4a29f60\n\n"
+                "- cArelle izmjene radjene na verziji sa zadnjim commitom pod oznakom\n"
+                "  '4a29f60' na githubu. '4a29f60' commit je napravljen 23.02.2015\n"
+                "- Interna verzija cArelle-a je 1.1.0 64bit 2015-03-06 14:48 UTC\n"
+                "- Radjene su promjene iskljucivanja falback funkcije prilikom validacije\n"
+                "  na nacin da se falback nece izvrsiti u slucaju kada validacija\n"
+                "  zadovoljava provjeru.\n\n"
+                "------------------------------------------------------------------\n\n"
+                "Arelle(r)\n\n"
                 "An open source XBRL platform\n"
                 "(c) 2010-2015 Mark V Systems Limited\n"
                 "All rights reserved\nhttp://www.arelle.org\nsupport@arelle.org\n\n"

@@ -366,7 +366,7 @@ class CntlrWinMain (Cntlr.Cntlr):
         if 10 < topLeftH < h - 60:
             self.tabWinTopLeft.config(height=topLeftH)
         
-        self.parent.title(_("arelle - Unnamed"))
+        self.parent.title(_("cArelle - Unnamed"))
         
         self.logFile = None
         
@@ -431,14 +431,14 @@ class CntlrWinMain (Cntlr.Cntlr):
         self.dirty = False
         self.filename = None
         self.data = {}
-        self.parent.title(_("arelle - Unnamed"));
+        self.parent.title(_("cArelle - Unnamed"));
         self.modelManager.load(None);
         
     def okayToContinue(self):
         if not self.dirty:
             return True
         reply = tkinter.messagebox.askyesnocancel(
-                    _("arelle - Unsaved Changes"),
+                    _("cArelle - Unsaved Changes"),
                     _("Save unsaved changes?"), 
                     parent=self.parent)
         if reply is None:
@@ -457,19 +457,19 @@ class CntlrWinMain (Cntlr.Cntlr):
                 if fileType in ("html", "xml", None):
                     if fileType == "html":
                         filename = self.uiFileDialog("save",
-                                title=_("arelle - Save HTML-rendered Table"),
+                                title=_("cArelle - Save HTML-rendered Table"),
                                 initialdir=initialdir,
                                 filetypes=[(_("HTML file .html"), "*.html"), (_("HTML file .htm"), "*.htm")],
                                 defaultextension=".html")
                     elif fileType == "xml":
                         filename = self.uiFileDialog("save",
-                                title=_("arelle - Save Table Layout Model"),
+                                title=_("cArelle - Save Table Layout Model"),
                                 initialdir=initialdir,
                                 filetypes=[(_("Layout model file .xml"), "*.xml")],
                                 defaultextension=".xml")
                     else: # ask file type
                         filename = self.uiFileDialog("save",
-                                title=_("arelle - Save XBRL Instance or HTML-rendered Table"),
+                                title=_("cArelle - Save XBRL Instance or HTML-rendered Table"),
                                 initialdir=initialdir,
                                 filetypes=[(_("XBRL instance .xbrl"), "*.xbrl"), (_("XBRL instance .xml"), "*.xml"), (_("HTML table .html"), "*.html"), (_("HTML table .htm"), "*.htm")],
                                 defaultextension=".html")
@@ -481,20 +481,20 @@ class CntlrWinMain (Cntlr.Cntlr):
                     try:
                         ViewFileRenderedGrid.viewRenderedGrid(modelXbrl, filename, lang=self.labelLang, sourceView=view)
                     except (IOError, EnvironmentError) as err:
-                        tkinter.messagebox.showwarning(_("arelle - Error"),
+                        tkinter.messagebox.showwarning(_("cArelle - Error"),
                                         _("Failed to save {0}:\n{1}").format(
                                         filename, err),
                                         parent=self.parent)
                     return True
                 elif fileType == "xbrl":
                     return self.uiFileDialog("save",
-                            title=_("arelle - Save Instance"),
+                            title=_("cArelle - Save Instance"),
                             initialdir=initialdir,
                             filetypes=[(_("XBRL instance .xbrl"), "*.xbrl"), (_("XBRL instance .xml"), "*.xml")],
                             defaultextension=".xbrl")
             elif isinstance(view, ViewWinTests.ViewTests) and modelXbrl.modelDocument.type in (ModelDocument.Type.TESTCASESINDEX, ModelDocument.Type.TESTCASE):
                 filename = self.uiFileDialog("save",
-                        title=_("arelle - Save Test Results"),
+                        title=_("cArelle - Save Test Results"),
                         initialdir=os.path.dirname(self.modelManager.modelXbrl.modelDocument.uri),
                         filetypes=[(_("CSV file"), "*.csv")],
                         defaultextension=".csv")
@@ -503,14 +503,14 @@ class CntlrWinMain (Cntlr.Cntlr):
                 try:
                     ViewFileTests.viewTests(self.modelManager.modelXbrl, filename)
                 except (IOError, EnvironmentError) as err:
-                    tkinter.messagebox.showwarning(_("arelle - Error"),
+                    tkinter.messagebox.showwarning(_("cArelle - Error"),
                                         _("Failed to save {0}:\n{1}").format(
                                         filename, err),
                                         parent=self.parent)
                 return True
             elif isinstance(view, ViewWinTree.ViewTree):
                 filename = self.uiFileDialog("save",
-                        title=_("arelle - Save {0}").format(view.tabTitle),
+                        title=_("cArelle - Save {0}").format(view.tabTitle),
                         initialdir=os.path.dirname(self.modelManager.modelXbrl.modelDocument.uri),
                         filetypes=[(_("CSV file"), "*.csv"),(_("HTML file"), "*.html"),(_("XML file"), "*.xml"),(_("JSON file"), "*.json")],
                         defaultextension=".csv")
@@ -524,7 +524,7 @@ class CntlrWinMain (Cntlr.Cntlr):
                     else:
                         ViewFileRelationshipSet.viewRelationshipSet(modelXbrl, filename, view.tabTitle, view.arcrole, labelrole=view.labelrole, lang=view.lang)
                 except (IOError, EnvironmentError) as err:
-                    tkinter.messagebox.showwarning(_("arelle - Error"),
+                    tkinter.messagebox.showwarning(_("cArelle - Error"),
                                         _("Failed to save {0}:\n{1}").format(
                                         filename, err),
                                         parent=self.parent)
@@ -532,7 +532,7 @@ class CntlrWinMain (Cntlr.Cntlr):
                 
             elif isinstance(view, ViewWinXml.ViewXml) and self.modelManager.modelXbrl.formulaOutputInstance:
                 filename = self.uiFileDialog("save",
-                        title=_("arelle - Save Formula Result Instance Document"),
+                        title=_("cArelle - Save Formula Result Instance Document"),
                         initialdir=os.path.dirname(self.modelManager.modelXbrl.modelDocument.uri),
                         filetypes=[(_("XBRL output instance .xml"), "*.xml"), (_("XBRL output instance .xbrl"), "*.xbrl")],
                         defaultextension=".xml")
@@ -544,18 +544,18 @@ class CntlrWinMain (Cntlr.Cntlr):
                         XmlUtil.writexml(fh, self.modelManager.modelXbrl.formulaOutputInstance.modelDocument.xmlDocument, encoding="utf-8")
                     self.addToLog(_("[info] Saved formula output instance to {0}").format(filename) )
                 except (IOError, EnvironmentError) as err:
-                    tkinter.messagebox.showwarning(_("arelle - Error"),
+                    tkinter.messagebox.showwarning(_("cArelle - Error"),
                                     _("Failed to save {0}:\n{1}").format(
                                     self.filename, err),
                                     parent=self.parent)
                 return True
-        tkinter.messagebox.showwarning(_("arelle - Save what?"), 
+        tkinter.messagebox.showwarning(_("cArelle - Save what?"), 
                                        _("Nothing has been selected that can be saved.  \nPlease select a view pane that can be saved."),
                                        parent=self.parent)
         '''
         if self.filename is None:
             filename = self.uiFileDialog("save",
-                    title=_("arelle - Save File"),
+                    title=_("cArelle - Save File"),
                     initialdir=".",
                     filetypes=[(_("Xbrl file"), "*.x*")],
                     defaultextension=".xbrl")
@@ -571,10 +571,10 @@ class CntlrWinMain (Cntlr.Cntlr):
             self.uiShowStatus(_("Saved {0} items to {1}").format(
                                 len(self.data),
                                 self.filename), clearAfter=5000)
-            self.parent.title(_("arelle - {0}").format(
+            self.parent.title(_("cArelle - {0}").format(
                                 os.path.basename(self.filename)))
         except (EnvironmentError, pickle.PickleError) as err:
-            tkinter.messagebox.showwarning(_("arelle - Error"),
+            tkinter.messagebox.showwarning(_("cArelle - Error"),
                                 _("Failed to save {0}:\n{1}").format(
                                 self.filename, err),
                                 parent=self.parent)
@@ -588,7 +588,7 @@ class CntlrWinMain (Cntlr.Cntlr):
         if not self.okayToContinue():
             return
         filename = self.uiFileDialog("open",
-                            title=_("arelle - Open file"),
+                            title=_("cArelle - Open file"),
                             initialdir=self.config.setdefault("fileOpenDir","."),
                             filetypes=[(_("XBRL files"), "*.*")],
                             defaultextension=".xbrl")
@@ -604,11 +604,11 @@ class CntlrWinMain (Cntlr.Cntlr):
     def importFileOpen(self, *ignore):
         if not self.modelManager.modelXbrl or self.modelManager.modelXbrl.modelDocument.type not in (
              ModelDocument.Type.SCHEMA, ModelDocument.Type.LINKBASE, ModelDocument.Type.INSTANCE, ModelDocument.Type.INLINEXBRL):
-            tkinter.messagebox.showwarning(_("arelle - Warning"),
+            tkinter.messagebox.showwarning(_("cArelle - Warning"),
                             _("Import requires an opened DTS"), parent=self.parent)
             return False
         filename = self.uiFileDialog("open",
-                            title=_("arelle - Import file into opened DTS"),
+                            title=_("cArelle - Import file into opened DTS"),
                             initialdir=self.config.setdefault("importOpenDir","."),
                             filetypes=[(_("XBRL files"), "*.*")],
                             defaultextension=".xml")
@@ -675,7 +675,7 @@ class CntlrWinMain (Cntlr.Cntlr):
     def importWebOpen(self, *ignore):
         if not self.modelManager.modelXbrl or self.modelManager.modelXbrl.modelDocument.type not in (
              ModelDocument.Type.SCHEMA, ModelDocument.Type.LINKBASE, ModelDocument.Type.INSTANCE, ModelDocument.Type.INLINEXBRL):
-            tkinter.messagebox.showwarning(_("arelle - Warning"),
+            tkinter.messagebox.showwarning(_("cArelle - Warning"),
                             _("Import requires an opened DTS"), parent=self.parent)
             return False
         url = DialogURL.askURL(self.parent, buttonSEC=False, buttonRSS=False)
@@ -735,7 +735,7 @@ class CntlrWinMain (Cntlr.Cntlr):
         try:
             if attach:
                 modelXbrl.closeViews()
-            self.parent.title(_("arelle - {0}").format(
+            self.parent.title(_("cArelle - {0}").format(
                             os.path.basename(modelXbrl.modelDocument.uri)))
             self.setValidateTooltipText()
             if modelXbrl.modelDocument.type in ModelDocument.Type.TESTCASETYPES:
@@ -854,7 +854,7 @@ class CntlrWinMain (Cntlr.Cntlr):
         if not self.okayToContinue():
             return
         self.modelManager.close()
-        self.parent.title(_("arelle - Unnamed"))
+        self.parent.title(_("cArelle - Unnamed"))
         self.setValidateTooltipText()
 
     def validate(self):
@@ -862,7 +862,7 @@ class CntlrWinMain (Cntlr.Cntlr):
         if modelXbrl:
             if (modelXbrl.modelManager.validateDisclosureSystem and 
                 not modelXbrl.modelManager.disclosureSystem.selection):
-                tkinter.messagebox.showwarning(_("arelle - Warning"),
+                tkinter.messagebox.showwarning(_("cArelle - Warning"),
                                 _("Validation - disclosure system checks is requested but no disclosure system is selected, please select one by validation - select disclosure system."),
                                 parent=self.parent)
             else:
@@ -890,12 +890,12 @@ class CntlrWinMain (Cntlr.Cntlr):
     def compareDTSes(self):
         countLoadedDTSes = len(self.modelManager.loadedModelXbrls)
         if countLoadedDTSes != 2:
-            tkinter.messagebox.showwarning(_("arelle - Warning"),
+            tkinter.messagebox.showwarning(_("cArelle - Warning"),
                             _("Two DTSes are required for the Compare DTSes operation, {0} found").format(countLoadedDTSes),
                             parent=self.parent)
             return False
         versReportFile = self.uiFileDialog("save",
-                title=_("arelle - Save Versioning Report File"),
+                title=_("cArelle - Save Versioning Report File"),
                 initialdir=self.config.setdefault("versioningReportDir","."),
                 filetypes=[(_("Versioning report file"), "*.xml")],
                 defaultextension=".xml")
@@ -934,11 +934,11 @@ class CntlrWinMain (Cntlr.Cntlr):
             self.showStatus(_("Loaded {0} items from {1}").format(
                             self.listbox.size(),
                             self.filename), clearAfter=5000)
-            self.parent.title(_("arelle - {0}").format(
+            self.parent.title(_("cArelle - {0}").format(
                             os.path.basename(self.filename)))
                             
         except (EnvironmentError, pickle.PickleError) as err:
-            tkinter.messagebox.showwarning(_("arelle - Error"),
+            tkinter.messagebox.showwarning(_("cArelle - Error"),
                             _("Failed to load {0}\n{1}").format(
                             self.filename,
                             err),
@@ -977,7 +977,7 @@ class CntlrWinMain (Cntlr.Cntlr):
             
     def confirmClearWebCache(self):
         if tkinter.messagebox.askyesno(
-                    _("arelle - Clear Internet Cache"),
+                    _("cArelle - Clear Internet Cache"),
                     _("Are you sure you want to clear the internet cache?"), 
                     parent=self.parent):
             def backgroundClearCache():
@@ -1072,7 +1072,7 @@ class CntlrWinMain (Cntlr.Cntlr):
     def languagesDialog(self, *args):
         override = self.lang if self.lang != self.modelManager.defaultLang else ""
         import tkinter.simpledialog
-        newValue = tkinter.simpledialog.askstring(_("arelle - Labels language code setting"),
+        newValue = tkinter.simpledialog.askstring(_("cArelle - Labels language code setting"),
                 _("The system default language is: {0} \n\n"
                   "You may override with a different language for labels display. \n\n"
                   "Current language override code: {1} \n"
@@ -1150,9 +1150,19 @@ class CntlrWinMain (Cntlr.Cntlr):
         from arelle import DialogAbout, Version
         from lxml import etree
         DialogAbout.about(self.parent,
-                          _("About arelle"),
-                          os.path.join(self.imagesDir, "arelle32.gif"),
-                          _("arelle\u00ae {0} {1}bit {2}\n"
+                          _("About cArelle"),
+                          os.path.join(self.imagesDir, "arelle64.gif"),
+                          _(
+                              
+                              "\ncArelle {1}bit {2} - based on Arelle(r) - commit 4a29f60\n\n"
+                              "- cArelle izmjene radjene na verziji sa zadnjim commitom pod oznakom\n"
+                              "  '4a29f60' na githubu. '4a29f60' commit je napravljen 23.02.2015\n"
+                              "- Interna verzija cArelle-a je 1.1.0 64bit 2015-03-06 14:48 UTC\n"
+                              "- Radjene su promjene iskljucivanja falback funkcije prilikom validacije\n"
+                              "  na nacin da se falback nece izvrsiti u slucaju kada validacija\n"
+                              "  zadovoljava provjeru.\n\n"
+                              "------------------------------------------------------------------\n\n"
+                              "Arelle\u00ae\n"
                               "An open source XBRL platform\n"
                               "\u00a9 2010-2015 Mark V Systems Limited\n"
                               "All rights reserved\nhttp://www.arelle.org\nsupport@arelle.org\n\n"
@@ -1200,7 +1210,7 @@ class CntlrWinMain (Cntlr.Cntlr):
         
     def logSaveToFile(self, *ignore):
         filename = self.uiFileDialog("save",
-                title=_("arelle - Save Messages Log"),
+                title=_("cArelle - Save Messages Log"),
                 initialdir=".",
                 filetypes=[(_("Txt file"), "*.txt")],
                 defaultextension=".txt")
@@ -1209,7 +1219,7 @@ class CntlrWinMain (Cntlr.Cntlr):
         try:
             self.logView.saveToFile(filename)
         except (IOError, EnvironmentError) as err:
-            tkinter.messagebox.showwarning(_("arelle - Error"),
+            tkinter.messagebox.showwarning(_("cArelle - Error"),
                                 _("Failed to save {0}:\n{1}").format(
                                 filename, err),
                                 parent=self.parent)

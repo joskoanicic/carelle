@@ -1,1 +1,1 @@
-rename dist\arelle-win-x64.exe arelle-win-x64-2012-02-14.exe
+rename dist\cArelle-win-x64.exe cArelle-win-x64-1-1.exe
