@@ -668,6 +668,8 @@ class CntlrCmdLine(Cntlr.Cntlr):
             self.webCache.workOffline = False
         if options.internetTimeout is not None:
             self.webCache.timeout = (options.internetTimeout or None)  # use None if zero specified to disable timeout
+        if options.internetRecheck is not None:
+            self.webCache.recheck = (options.internetRecheck or None)  # use None if zero specified to disable timeout
         if options.internetLogDownloads:
             self.webCache.logDownloads = True
         fo = FormulaOptions()
