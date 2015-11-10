@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-11-06 16:56+Central European Standard Time\n"
+"POT-Creation-Date: 2015-11-10 17:48+Central European Standard Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -592,7 +592,7 @@ msgstr ""
 msgid "Done"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:115
+#: arelle\CntlrWebMain.py:116
 msgid ""
 "<html><body><form method=\"POST\"><table>\n"
 "                <tr><td>Name:</td><td><input name=\"name\" type=\"text\" /></td></tr>\n"
@@ -601,104 +601,104 @@ msgid ""
 "                </table></form></body></html>"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:130
+#: arelle\CntlrWebMain.py:131
 msgid "<p>You are logged in as user: {0}</p>"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:132
+#: arelle\CntlrWebMain.py:133
 msgid "<p>Login failed</p>"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:150
+#: arelle\CntlrWebMain.py:151
 msgid "<p>You are logged out.</p>"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:207
+#: arelle\CntlrWebMain.py:208
 msgid "POST must provide a zip file, Content-Type '{0}' not recognized as a zip file."
 msgstr ""
 
-#: arelle\CntlrWebMain.py:215
+#: arelle\CntlrWebMain.py:216
 msgid "Only validation or one view can be specified in one requested."
 msgstr ""
 
-#: arelle\CntlrWebMain.py:217
+#: arelle\CntlrWebMain.py:218
 msgid "Media '{0}' is not supported for validation (please select xhtml, html, xml, json or text)"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:220
+#: arelle\CntlrWebMain.py:221
 msgid "Media '{0}' is not supported for view (please select xhtml, html, xml, csv, or json)"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:222
+#: arelle\CntlrWebMain.py:223
 msgid "Neither validation nor view requested, nothing to do."
 msgstr ""
 
-#: arelle\CntlrWebMain.py:225
+#: arelle\CntlrWebMain.py:226
 msgid "Flavor '{0}' is not supported"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:227
+#: arelle\CntlrWebMain.py:228
 msgid "View '{0}' is not supported"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:229
+#: arelle\CntlrWebMain.py:230
 msgid "URL: "
 msgstr ""
 
-#: arelle\CntlrWebMain.py:299 arelle\CntlrWebMain.py:781
+#: arelle\CntlrWebMain.py:300 arelle\CntlrWebMain.py:783
 msgid "Messages"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:308
+#: arelle\CntlrWebMain.py:309
 msgid "From DTS, to DTS, and report must be specified"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:326
+#: arelle\CntlrWebMain.py:327
 msgid "proxy, plugins, packages or environment must be specified"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:338
+#: arelle\CntlrWebMain.py:339
 msgid "Configuration Request"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:354
+#: arelle\CntlrWebMain.py:355
 msgid "Stop Request"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:381
+#: arelle\CntlrWebMain.py:382
 msgid "QuickBooks report '{0}' is not supported (please select from: {1})"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:384
+#: arelle\CntlrWebMain.py:385
 msgid "Media '{0}' is not supported for xbrl-gl (please select xhtml, html or xml)"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:386
+#: arelle\CntlrWebMain.py:387
 msgid "FromDate '{0}' missing or not valid"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:388
+#: arelle\CntlrWebMain.py:389
 msgid "ToDate '{0}' missing or not valid"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:392
+#: arelle\CntlrWebMain.py:393
 msgid "Request queued for QuickBooks..."
 msgstr ""
 
-#: arelle\CntlrWebMain.py:392 arelle\CntlrWebMain.py:413
-#: arelle\CntlrWebMain.py:419
+#: arelle\CntlrWebMain.py:393 arelle\CntlrWebMain.py:414
+#: arelle\CntlrWebMain.py:420
 msgid "Quickbooks Request"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:413
+#: arelle\CntlrWebMain.py:414
 msgid "QuickBooks ticket not found, request canceled."
 msgstr ""
 
-#: arelle\CntlrWebMain.py:418
+#: arelle\CntlrWebMain.py:419
 msgid "{0}, Waiting 20 seconds..."
 msgstr ""
 
-#: arelle\CntlrWebMain.py:439
+#: arelle\CntlrWebMain.py:440
 msgid ""
 "<table width=\"700p\">\n"
 "<tr><th colspan=\"2\">Arelle QuickBooks Global Ledger Interface</th></tr>\n"
@@ -707,7 +707,7 @@ msgid ""
 "</table>"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:482
+#: arelle\CntlrWebMain.py:483
 msgid ""
 "<table>\n"
 "<tr><th colspan=\"2\">Arelle web API</th></tr>\n"
@@ -718,7 +718,7 @@ msgid ""
 "<tr><td>/rest/xbrl/{file}/validation/xbrl</td><td>Validate document at {file}.</td></tr>\n"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:490
+#: arelle\CntlrWebMain.py:491
 msgid ""
 "\n"
 "<tr><td> </td><td>For an http POST of a zip file (mime type application/zip), {file} is the relative file path inside the zip file.</td></tr>\n"
@@ -731,7 +731,7 @@ msgid ""
 "document c.xbrl (in POSTed zip) and return structured xml results.</td></tr>\n"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:501
+#: arelle\CntlrWebMain.py:502
 msgid ""
 "\n"
 "<tr><td> </td><td>For a browser request or http GET request, {file} may be local or web url, and may have \"/\" characters replaced by \";\" characters \n"
@@ -744,7 +744,7 @@ msgid ""
 "document at c:/a/b/c.xbrl (on local drive) and return structured xml results.</td></tr>\n"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:511
+#: arelle\CntlrWebMain.py:512
 msgid ""
 "\n"
 "<tr><td></td><td>Parameters are optional after \"?\" character, and are separated by \"&amp;\" characters, \n"
@@ -900,37 +900,38 @@ msgid ""
 "<tr><td style=\"text-indent: 1em;\">environment</td><td>Show host environment (config and cache directories).</td></tr>\n"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:664
+#: arelle\CntlrWebMain.py:665
 msgid ""
 "\n"
 "<tr><td>/rest/stopWebServer</td><td>Shut down (terminate process after 2.5 seconds delay).</td></tr>\n"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:675
+#: arelle\CntlrWebMain.py:676
 msgid ""
 "<table width=\"700p\">\n"
-"<tr><th colspan=\"2\">About arelle</th></tr>\n"
-"<tr><td rowspan=\"12\" style=\"vertical-align:top;\"><img src=\"%s\"/></td><td>cArelle version: %sbit %s - based on Arelle&reg;. An open source XBRL platform</td></tr>\n"
-"<tr><td>&copy; 2010-2015 Mark V Systems Limited.  All rights reserved.</td></tr>\n"
-"<tr><td>Web site: <a href=\"http://www.arelle.org\">http://www.arelle.org</a>.  \n"
-"E-mail support: <a href=\"mailto:support@arelle.org\">support@arelle.org</a>.</td></tr>\n"
-"<tr><td>Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file \n"
-"except in compliance with the License.  You may obtain a copy of the License at\n"
-"<a href=\"http://www.apache.org/licenses/LICENSE-2.0\">http://www.apache.org/licenses/LICENSE-2.0</a>.\n"
-"Unless required by applicable law or agreed to in writing, software distributed under the License \n"
-"is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  \n"
-"See the License for the specific language governing permissions and limitations under the License.</td></tr>\n"
-"<tr><td>Includes:</td><tr>\n"
+"<tr><th colspan=\"2\">About cArelle&reg;</th></tr>\n"
+"<tr><td rowspan=\"17\" style=\"vertical-align:top;\"><img src=\"%s\"/></td><td>cArelle version: %sbit %s</td></tr>\n"
+"<tr><td>&copy; 2015 Compliant Risk Technology LLC. All rights reserved.</td></tr>\n"
+"<tr><td>Web site: <a href=\"https://www.crt.hr\">https://www.crt.hr</a>.  \n"
+"E-mail support: <a href=\"mailto:info@crt.hr\">info@crt.hr</a>.</td></tr>\n"
+"<tr><td>Licensed and maintained under the S2CT License, Version 1.2.0 (the \"License\")\n"
+"under agreed conditions. See the License for the specific\n"
+"language governing permissions and limitations under the License.</td></tr>\n"
+"<tr><td>&nbsp;</td><tr>\n"
+"<tr><td>Includes as integrated or changed open source projects:</td><tr>\n"
+"<tr><td style=\"text-indent: 2.0em;\">Arelle&reg;</td></tr>\n"
 "<tr><td style=\"text-indent: 2.0em;\">Python&reg; %s.%s.%s &copy; 2001-2010 Python Software Foundation</td></tr>\n"
 "<tr><td style=\"text-indent: 2.0em;\">PyParsing &copy; 2003-2010 Paul T. McGuire</td></tr>\n"
 "<tr><td style=\"text-indent: 2.0em;\">lxml %s.%s.%s &copy; 2004 Infrae, ElementTree &copy; 1999-2004 by Fredrik Lundh</td></tr>\n"
 "<tr><td style=\"text-indent: 2.0em;\">xlrd &copy; 2005-2013 Stephen J. Machin, Lingfo Pty Ltd, &copy; 2001 D. Giffin, &copy; 2000 A. Khan</td></tr>\n"
 "<tr><td style=\"text-indent: 2.0em;\">xlwt &copy; 2007 Stephen J. Machin, Lingfo Pty Ltd, &copy; 2005 R. V. Kiseliov</td></tr>\n"
 "<tr><td style=\"text-indent: 2.0em;\">Bottle &copy; 2011 Marcel Hellkamp</td></tr>\n"
+"<tr><td>&nbsp;</td></tr>\n"
+"<tr><td style=\"text-indent: 2.0em;\">Each licensed under creators conditions.</td></tr>\n"
 "</table>"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:705
+#: arelle\CntlrWebMain.py:707
 msgid ""
 "<table width=\"700p\">\n"
 "<tr><th colspan=\"2\">Arelle Web Services</th></tr>\n"
@@ -939,7 +940,7 @@ msgid ""
 "</table>"
 msgstr ""
 
-#: arelle\CntlrWebMain.py:716
+#: arelle\CntlrWebMain.py:718
 msgid ""
 "<table width=\"700p\">\n"
 "<tr><th colspan=\"2\">Arelle CGI Services</th></tr>\n"

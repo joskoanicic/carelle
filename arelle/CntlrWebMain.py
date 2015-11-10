@@ -78,6 +78,7 @@ def startWebserver(_cntlr, options):
     if server == "cgi":
         # catch a non-REST interface by cgi Interface (may be a cgi app exe module, etc)
         app.route('<cgiAppPath:path>', GETorPOST, cgiInterface)
+
     if server == "wsgi":
         return app
     elif server == "cgi":
@@ -97,7 +98,7 @@ def cgiInterface(cgiAppPath):
     if not request.query:  # no parameters, index page
         return indexPageCGI()
     elif 'about' in request.query:
-        return about(cgiAppPath + "?image=arelle32.gif")
+        return about(cgiAppPath + "?image=arelle64.png")
     elif 'help' in request.query:
         return helpREST()
     elif 'image' in request.query:
@@ -673,25 +674,26 @@ def about(arelleImgFile=None):
     :returns: html - About web page
     """
     return htmlBody(_('''<table width="700p">
-<tr><th colspan="2">About arelle</th></tr>
-<tr><td rowspan="12" style="vertical-align:top;"><img src="%s"/></td><td>cArelle version: %sbit %s - based on Arelle&reg;. An open source XBRL platform</td></tr>
-<tr><td>&copy; 2010-2015 Mark V Systems Limited.  All rights reserved.</td></tr>
-<tr><td>Web site: <a href="http://www.arelle.org">http://www.arelle.org</a>.  
-E-mail support: <a href="mailto:support@arelle.org">support@arelle.org</a>.</td></tr>
-<tr><td>Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file 
-except in compliance with the License.  You may obtain a copy of the License at
-<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>.
-Unless required by applicable law or agreed to in writing, software distributed under the License 
-is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-See the License for the specific language governing permissions and limitations under the License.</td></tr>
-<tr><td>Includes:</td><tr>
+<tr><th colspan="2">About cArelle&reg;</th></tr>
+<tr><td rowspan="17" style="vertical-align:top;"><img src="%s"/></td><td>cArelle version: %sbit %s</td></tr>
+<tr><td>&copy; 2015 Compliant Risk Technology LLC. All rights reserved.</td></tr>
+<tr><td>Web site: <a href="https://www.crt.hr">https://www.crt.hr</a>.  
+E-mail support: <a href="mailto:info@crt.hr">info@crt.hr</a>.</td></tr>
+<tr><td>Licensed and maintained under the S2CT License, Version 1.2.0 (the "License")
+under agreed conditions. See the License for the specific
+language governing permissions and limitations under the License.</td></tr>
+<tr><td>&nbsp;</td><tr>
+<tr><td>Includes as integrated or changed open source projects:</td><tr>
+<tr><td style="text-indent: 2.0em;">Arelle&reg;</td></tr>
 <tr><td style="text-indent: 2.0em;">Python&reg; %s.%s.%s &copy; 2001-2010 Python Software Foundation</td></tr>
 <tr><td style="text-indent: 2.0em;">PyParsing &copy; 2003-2010 Paul T. McGuire</td></tr>
 <tr><td style="text-indent: 2.0em;">lxml %s.%s.%s &copy; 2004 Infrae, ElementTree &copy; 1999-2004 by Fredrik Lundh</td></tr>
 <tr><td style="text-indent: 2.0em;">xlrd &copy; 2005-2013 Stephen J. Machin, Lingfo Pty Ltd, &copy; 2001 D. Giffin, &copy; 2000 A. Khan</td></tr>
 <tr><td style="text-indent: 2.0em;">xlwt &copy; 2007 Stephen J. Machin, Lingfo Pty Ltd, &copy; 2005 R. V. Kiseliov</td></tr>
 <tr><td style="text-indent: 2.0em;">Bottle &copy; 2011 Marcel Hellkamp</td></tr>
-</table>''') % (arelleImgFile or '/images/arelle32.gif', 
+<tr><td>&nbsp;</td></tr>
+<tr><td style="text-indent: 2.0em;">Each licensed under creators conditions.</td></tr>
+</table>''') % (arelleImgFile or '/images/arelle64.png', 
                 cntlr.systemWordSize, 
                 Version.version,
                 sys.version_info[0],sys.version_info[1],sys.version_info[2], 

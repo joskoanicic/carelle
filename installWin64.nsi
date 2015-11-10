@@ -22,10 +22,10 @@
   OutFile "dist\cArelle-win-x64.exe"
 
   ;Default installation folder
-  InstallDir "$PROGRAMFILES64\cArelle"
+  InstallDir "C:\cArelle"
   
   ;Get installation folder from registry if available
-  InstallDirRegKey HKLM "Software\Arelle" ""
+  InstallDirRegKey HKLM "Software\cArelle" ""
 
   ;Request application privileges for Windows Vista
   RequestExecutionLevel none
@@ -49,7 +49,7 @@
   
   ;Start Menu Folder Page Configuration
   !define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKLM" 
-  !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\Arelle" 
+  !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\cArelle" 
   !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "Start Menu Folder"
   
   !insertmacro MUI_PAGE_STARTMENU Application $StartMenuFolder
@@ -75,16 +75,16 @@ Section "cArelle" SecArelle
   File /r build\exe.win-amd64-3.3\*.*
   
   ;Store installation folder
-  WriteRegStr HKLM "Software\Arelle" "" $INSTDIR
+  WriteRegStr HKLM "Software\cArelle" "" $INSTDIR
   ; Write the uninstall keys for Windows
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Arelle" "DisplayName" "Arelle"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Arelle" "Publisher" "arelle.org"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Arelle" "RegOwner" "Mark V Systems Limited"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Arelle" "URLInfoAbout" "http://arelle.org"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Arelle" "DisplayIcon" '"$INSTDIR\images\arelle16x16and32x32.ico"'
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Arelle" "UninstallString" '"$INSTDIR\uninstall.exe"'
-  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Arelle" "NoModify" 1
-  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Arelle" "NoRepair" 1
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\cArelle" "DisplayName" "cArelle"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\cArelle" "Publisher" "www.crt.hr"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\cArelle" "RegOwner" "Mark V Systems Limited"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\cArelle" "URLInfoAbout" "http://www.crt.hr"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\cArelle" "DisplayIcon" '"$INSTDIR\images\arelle16x16and32x32.ico"'
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\cArelle" "UninstallString" '"$INSTDIR\uninstall.exe"'
+  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\cArelle" "NoModify" 1
+  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\cArelle" "NoRepair" 1
   
   ;Create uninstaller
   WriteUninstaller "$INSTDIR\Uninstall.exe"
@@ -141,7 +141,7 @@ Section "Uninstall"
   Delete "$SMPROGRAMS\$StartMenuFolder\*.*"
   RMDir "$SMPROGRAMS\$StartMenuFolder"
 
-  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Arelle"
-  DeleteRegKey /ifempty HKLM "Software\Arelle"
+  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\cArelle"
+  DeleteRegKey /ifempty HKLM "Software\cArelle"
 
 SectionEnd
